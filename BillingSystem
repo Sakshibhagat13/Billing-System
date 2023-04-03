@@ -1,0 +1,59 @@
+package com.system;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class BillingSystem {
+	
+	
+	private ArrayList<Patient> patients;
+    private ArrayList<Procedure> procedures;
+    private ArrayList<Invoice> invoices;
+    
+    public BillingSystem() {
+    	
+    	
+    	this.setPatients(new ArrayList<Patient>());
+        this.setProcedures(new ArrayList<Procedure>());
+        this.invoices = new ArrayList<Invoice>();
+	}
+    
+    public void addPatient(String name, String address, String phone, String insurance) {
+        Patient patient = new Patient(name, address, phone, insurance);
+        getPatients().add(patient);
+    }
+
+    public void addProcedure(String code, String description, double price) {
+        Procedure procedure = new Procedure(code, description, price);
+        getProcedures().add(procedure);
+    }
+    
+    public void createInvoice(Patient patient, Procedure procedure, Date date) {
+        Invoice invoice = new Invoice(patient, procedure, date);
+        invoices.add(invoice);
+    }
+    
+    public void printInvoices() {
+        for (Invoice invoice : invoices) {
+            System.out.println(invoice.toString());
+        }
+    }
+
+	public ArrayList<Patient> getPatients() {
+		return patients;
+	}
+
+	public void setPatients(ArrayList<Patient> patients) {
+		this.patients = patients;
+	}
+
+	public ArrayList<Procedure> getProcedures() {
+		return procedures;
+	}
+
+	public void setProcedures(ArrayList<Procedure> procedures) {
+		this.procedures = procedures;
+	}
+
+
+}
