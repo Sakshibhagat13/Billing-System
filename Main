@@ -1,0 +1,45 @@
+package com.system;
+
+import java.util.Date;
+
+public class Main {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		BillingSystem billingSystem = new BillingSystem();
+		
+		    billingSystem.addPatient("SAKSHI BHAGAT", "At-Roha", "7743962572", "Blue Cross");
+	        billingSystem.addPatient("Shreya Chavarkar", "AT-PANVEL", "8543569910", "Care Health Insurance");
+	        billingSystem.addPatient("Niranjan Randive", "AT-Murud", "8530552428", "SBI Health Insurance");
+	        billingSystem.addPatient("Ajinkya Shama", "AT-Murud", "9086453520", "India New Health Insurance");
+	        billingSystem.addPatient("Mansi Bhagat", "AT-Raigad", "7884323678", "Care Health Insurance");
+	        billingSystem.addPatient("Snehal Thale", "At-Kakalghar", "7447555242", "Star Health Insurance");
+
+	        
+	        billingSystem.addProcedure("100", "Physical exam", 100.0);
+	        billingSystem.addProcedure("200", "X-ray", 200.0);
+	        billingSystem.addProcedure("300", "Blood test", 75.0);
+	        billingSystem.addProcedure("400", "Daily Checkup", 98.0);
+	        billingSystem.addProcedure("500", "Heart Checkup", 500.0);
+	        billingSystem.addProcedure("600", "CT scan", 700.0);
+
+
+
+	        
+	        Date date = new Date();
+
+	        billingSystem.createInvoice(billingSystem.getPatients().get(0), billingSystem.getProcedures().get(0), date);
+	        billingSystem.createInvoice(billingSystem.getPatients().get(1), billingSystem.getProcedures().get(1), date);
+	        billingSystem.createInvoice(billingSystem.getPatients().get(2), billingSystem.getProcedures().get(2), date);
+	        billingSystem.createInvoice(billingSystem.getPatients().get(3), billingSystem.getProcedures().get(3), date);
+	        billingSystem.createInvoice(billingSystem.getPatients().get(4), billingSystem.getProcedures().get(4), date);
+	        billingSystem.createInvoice(billingSystem.getPatients().get(5), billingSystem.getProcedures().get(5), date);
+
+	        
+	        
+	        billingSystem.printInvoices();
+	}
+
+}
