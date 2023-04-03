@@ -1,0 +1,53 @@
+package com.system;
+
+import java.util.Date;
+
+public class Invoice {
+	
+	private Patient patient;
+    private Procedure procedure;
+    private Date date;
+
+    public Invoice() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Invoice(Patient patient, Procedure procedure, Date date) {
+		super();
+		this.patient = patient;
+		this.procedure = procedure;
+		this.date = date;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	public Procedure getProcedure() {
+		return procedure;
+	}
+
+	public void setProcedure(Procedure procedure) {
+		this.procedure = procedure;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "Invoice [patient=" + patient + ", procedure=" + procedure + ", date=" + date + "]";
+	}
+    
+    
+
+}
